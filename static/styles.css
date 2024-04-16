@@ -1,0 +1,148 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    background-image: url('/static/photo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #ffdab9; 
+    font-family: Apple Chancery, cursive; 
+}
+
+
+.container {
+    background-color: #ffffff; 
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+}
+
+
+h1 {
+    color: #333333; 
+    text-align: center;
+    margin-bottom: 50px; 
+}
+
+
+#property-type-dropdown {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    border: 1px solid #0d0d0d; 
+    border-radius: 10px;
+    background-color: #f6d3d3; 
+    cursor: pointer; 
+}
+
+
+#view-details-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    color: #ffffff; 
+    background-color: #050505; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer; 
+}
+
+
+#result-container {
+    margin-top: 20px; 
+}
+
+
+footer {
+    margin-top: 20px;
+    text-align: center;
+    color: #140000; 
+}
+
+
+#amenities-button {
+    display: block;
+    margin-top: 20px;
+    padding: 40px 60px; 
+    font-size: 44px; 
+    font-weight: bold;
+    color: #7d3c3c;
+    background-color: #007bff; 
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+
+#amenities-list {
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+
+.amenity {
+    margin-bottom: 10px;
+}
+
+
+.container.signup {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 100px auto; 
+    width: 300px; 
+    text-align: center; 
+}
+
+
+.container.main {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 100px auto; 
+    width: 80%; 
+}
+
+
+.container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    
+}
+
+input[type="text"], input[type="password"], button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+p {
+    margin-top: 20px;
+}
+

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask Airbnb App</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+<div class="container main">
+    <h1>Happy Housing!!</h1>
+
+    <label for="property-type-dropdown">Select Property Type:</label>
+    <select id="property-type-dropdown">
+        
+    </select>
+
+    <button id="view-details-btn">View Details</button>
+
+    <div id="result-container">
+        
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2024 Flask Airbnb</p>
+</footer>
+
+<script>
+    
+    $(document).ready(function () {
+        $.getJSON('/get_unique_property_types', function (data) {
+            var propertyTypeDropdown = $('#property-type-dropdown');
+            $.each(data.unique_property_types, function (index, value) {
+                propertyTypeDropdown.append('<option value="' + value + '">' + value + '</option>');
+            });
+        });
+    });
+
+    
+    $('#view-details-btn').on('click', function () {
+        var selectedPropertyType = $('#property-type-dropdown').val();
+
+        
+        $.post('/get_listing_details', { selected_property_type: selectedPropertyType }, function (data) {
+            
+            $('#result-container').html('Listing URL: <a href="' + data.listing_url + '"> ' + data.listing_url + '</a><br>' +
+                                       'Description: ' + data.description + '<br>' +
+                                       'Pictures: <a href="' + data.picture_url + '"> ' + data.picture_url + '</a><br>' +
+                                       'Host Name: ' + data.host_name + '<br>' +
+                                       '<button id="amenities-btn">Amenities</button><div id="amenities-list" style="display: none;"><ul></ul></div>');
+
+            
+            $('#amenities-btn').on('click', function () {
+                var amenitiesList = $('#amenities-list ul');
+                amenitiesList.empty(); // Clear previous list
+                
+                
+                $.each(data.amenities, function (index, amenity) {
+                    amenitiesList.append('<li>' + amenity + '</li>');
+                });
+                
+                
+                $('#amenities-list').toggle();
+            });
+        });
+    });
+</script>
+
+</body>
+</html>

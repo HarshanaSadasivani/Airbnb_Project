@@ -1,0 +1,23 @@
+<!-- templates/listing_details_extended.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listing Details</title>
+</head>
+<body>
+
+    <h1>{{ listing_details['name'] }} Details</h1>
+
+    <ul>
+        <li>Description: {{ listing_details['description'] }}</li>
+        <li>Host Name: {{ listing_details['host_name'] }}</li>
+        <li>Host Since: {{ listing_details['host_since'] }}</li>
+        <li>Host Location: {{ listing_details['host_location'] }}</li>
+        <!-- Add more details as needed -->
+    </ul>
+
+</body>
+</html>
